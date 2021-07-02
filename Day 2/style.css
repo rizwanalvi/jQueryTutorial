@@ -16,6 +16,13 @@
  * animation swirl-in-fwd
  * ----------------------------------------
  */
+ #bootstrap-overrides p-5 { /* 100+1=101 priority score, yay! */
+  line-height: 1;
+  color: inherit;
+  padding: 20rem 
+}
+
+
  .navbar{
      position: fixed;
  }
