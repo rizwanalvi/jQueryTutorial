@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,400);
+        
+        body {
+        font: normal normal 13px/16px "Open Sans", sans-serif;
+        background: #dfdfdf;
+        }
+        
+        .container{
+        padding: 20px;
+        width: 300px;
+        margin: 0 auto;
+        margin-top: 40px;
+        background: white;
+        border-radius: 5px;}
+        
+        form {
+        display: inline-block;
+        }
+        
+        input{
+        padding: 4px 15px 4px 5px;
+        }
+        
+        
+        
+      
+        
+        ol {padding-left: 20px;}
+        
+        ol li {padding: 5px;color:#000;}
+        
+        ol li:nth-child(even){background: #dfdfdf;}
+        
+        .strike{text-decoration: line-through;}
+        
+        li:hover{
+          cursor: pointer;
+         }
+        </style>
+</head>
+<body>
+
+  
+       
+        <div class="container">
+            <h2>Simple To Do List</h2>
+        <p><em>Click and drag to reorder, double click to cross an item off.</em></p>
+           
+            <form name="toDoList">
+                <input type="text" name="ListItem" class=""/>
+            </form>
+        
+            <div id="button" class="btn btn-warning">Add</div>
+            <br/>
+            <ol></ol>
+          
+          
+        
+        </div>
+      
+    <script src="app.js"></script>
+</body>
+</html>
