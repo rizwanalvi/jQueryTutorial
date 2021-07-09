@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+</head>
+<body>
+    <input type="text" name="" id="">
+    <input type="button" value="search">
+  <img src="" alt="">
+  <h1></h1>
+<script>
+
+$(function(){
+   $.ajax({
+       type: "GET",
+       url: "http://www.omdbapi.com/?s=superman&apikey=6ff571af",
+       data: "data",
+       dataType: "JSON",
+       success: function (response) {
+           for(let i=0; i<response.Search.length;i++){
+           console.log(response.Search[i].Poster)
+           document.write(`<img src=${response.Search[i].Poster} alt="">`);
+           document.write(`<h1>${response.Search[i].Title}</h1>`);
+        }
+        //    $('img').attr('src',response.Poster)
+        //    $('h1').text(response.Title)
+       }
+   });
+  
+ 
+});
+</script>
+</body>
+</html>
