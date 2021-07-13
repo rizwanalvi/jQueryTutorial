@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+</head>
+<body>
+    <div class="row">
+       <div class="col-md-6 p-5 bg-warning">
+        
+           <div class="form-group">
+            <label for="">STUDENT ID</label>
+               <input type="text" name="" id="stdid" class="form-control">
+           </div>
+           <div class="form-group">
+            <label for="">STUDENT NAME</label>
+            <input type="text" name="" id="stdname" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="">SEMESTER</label>
+            <select name="" id="lstSem"class="form-control" >
+                <option value="CPISM">CPISM</option>
+                <option value="DISM">DISM</option>
+                <option value="HDSE I">HDSE I</option>
+            </select>
+        
+        </div>
+        <div class="form-group">
+            <input type="button" value="Add" class="btn btn-success">
+        </div>
+        </div>
+       <div class="col-md-6">
+        <table class="table">
+
+        <thead>
+            <tr>
+              <th scope="col">Student ID</th>
+              <th scope="col">Student Name</th>
+              <th scope="col">Semester</th>
+         
+            </tr>
+          </thead>
+          <tbody>
+           
+            </tbody>
+        </table>
+       </div> 
+    </div>
+
+    <script>
+        $(function () {
+            // loadData();
+            $(':button').click(function(){
+               let stid = $('#stdid').val();
+               let stdname = $('#stdname').val();
+               let lstSem = $('#lstSem').val();
+               let obj = {"stid":stid,"stdname":stdname,"lstSem":lstSem}
+               
+               localStorage.setItem(stid,JSON.stringify(obj));
+               
+            //    loadData();
+            });
+               
+            // function loadData(){
+                for(let i=1;i<=localStorage.length;i++){
+                  // let ob1 = JSON.parse(localStorage.getItem());
+                 let obj1 = JSON.parse(localStorage.getItem(i));
+                 
+                    $('tbody').append(` <tr>
+              <th scope="row">${obj1.stid}</th>
+              <td>${obj1.stdname}</td>
+              <td>${obj1.lstSem}</td>
+                </tr>`);
+            
+                }
+            // }
+                
+           
+        });
+    </script>
+</body>
+</html>
