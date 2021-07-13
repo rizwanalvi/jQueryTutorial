@@ -41,7 +41,7 @@
               <th scope="col">Student ID</th>
               <th scope="col">Student Name</th>
               <th scope="col">Semester</th>
-         
+              <th scope="col"></th>
             </tr>
           </thead>
           <tbody>
@@ -50,10 +50,10 @@
         </table>
        </div> 
     </div>
-
     <script>
         $(function () {
             // loadData();
+            // localStorage.removeItem(1);
             $(':button').click(function(){
                let stid = $('#stdid').val();
                let stdname = $('#stdname').val();
@@ -74,12 +74,19 @@
               <th scope="row">${obj1.stid}</th>
               <td>${obj1.stdname}</td>
               <td>${obj1.lstSem}</td>
+              <td><input type="button" value="Remove" class="btn btn-danger btn-sm">
+</td>
                 </tr>`);
             
                 }
             // }
-                
-           
+              $('.btn-danger').click(function(){
+                    localStorage.removeItem(2);
+              });
+           function remove(ele)
+           {
+
+           }
         });
     </script>
 </body>
