@@ -2,7 +2,7 @@ $(function(){
     $('#loader').hide();
    $.ajax({
        type: "GET",
-       url: "https://newsapi.org/v2/everything?q=tesla&from=2021-06-08&sortadsadBy=publishedAt&apiKey=c3308f030508428f87c69cb808f4ac01",
+       url: "https://cors-anywhere.herokuapp.com/https://newsapi.org/v2/everything?q=tesla&from=2021-06-16&sortBy=publishedAt&apiKey=c3308f030508428f87c69cb808f4ac01",
        data: "data",
        dataType: "JSON",
        beforeSend:function () {
