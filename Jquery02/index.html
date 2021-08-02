@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <h1>jQuery Session 3 </h1>
+    <h2>Pakistan</h2>
+    <h3></h3>
+    <p id="txtdata">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem mollitia laboriosam omnis rem possimus odit eos, ad repellendus debitis reprehenderit voluptatem suscipit natus provident vero accusamus quod beatae dolore. Eaque!</p>
+    <p id="txtvalue" class="alert alert-success"></p>
+    <form action="">
+    <div class="form-group">
+        <input type="text" class="form-control" id="txtval">
+    </div>
+    <div class="form-group">
+        <input type="button" value="Add" class="btn btn-warning">
+    </div>
+    <div class="form-group">
+      <h1 class="alert alert-danger"></h1>
+    </div>
+    <ul class="list-group">
+        
+    </ul>
+</form>
+<script>
+        $(function(){
+        let data = $('h2').text(); //Get or Read
+       
+        $('h3').text(data); //Set or Write
+        
+        let txt = $('#txtdata').text();
+        $('#txtvalue').text(txt)
+            $('.btn').click(function(){
+                 
+                let vData = $('#txtval').val();
+                $('.alert-danger').text(vData);
+          //     $('.list-group').append(`<li class="list-group-item">${vData}</li>`);
+              $('.list-group').prepend(`<li class="list-group-item">${vData}</li>`);
+            
+            });
+
+           
+        });
+
+    </script>
+</body>
+</html>
