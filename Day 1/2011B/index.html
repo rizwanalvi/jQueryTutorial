@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+   
+</head>
+<body>
+    <h1 class="display-4">JQUERY IS READY</h1>
+    <p class="lead alert alert-warning text-justify">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sint at labore esse id? Dolorum suscipit fugit voluptatum dignissimos, provident modi, voluptatem beatae aliquid molestiae saepe necessitatibus molestias, expedita voluptatibus qui.</p>
+    <div class="btn-group">
+        <button class="btn btn-warning">Hide</button>
+        <button class="btn btn-success">Show</button>
+        <button class="btn btn-info">Toggle</button>
+    </div>
+    <div class="btn-group">
+        <button class="btn btn-primary">Fade Out</button>
+        <button class="btn btn-secondary">Fade In</button>
+        <a href="#" class="btn btn-dark">Fade Toggle</a>
+    </div>
+    <h3>SELECT YOU LIST</h3>
+    <ul class="list-group">
+        <li class="list-group-item">An item</li>
+        <li class="list-group-item">A second item</li>
+        <li class="list-group-item">A third item</li>
+    </ul>
+    <script>
+        $(function(){
+            $('.btn-danger').click(()=>{
+                $('h1').hide(2000)
+            });
+            $('.btn-success').click(()=>{
+                $('h1').show(2000)
+
+            });
+            $('.btn-info').click(()=>{
+                $('h1').toggle(2000);
+            });
+
+            $('.btn-primary').click(()=>{
+                $('h1').fadeOut(2000)
+            });
+            $('.btn-secondary').click(()=>{
+                $('h1').fadeIn(2000)
+
+            });
+            $('.btn-dark').click(()=>{
+                $('h1').fadeToggle(2000);
+            });
+            $('.list-group-item').click(function(){
+               
+                if($(this).hasClass('bg-warning')){
+                    $(this).removeClass('bg-warning');
+                }
+                else{
+                    $(this).addClass('bg-warning');
+
+                }
+               
+            });
+            $('.list-group-item').mouseenter(()=>{
+
+                    $('.list-group-item').css('cursor','grab');
+            
+        });
+            //   $('h1').hide(2000);
+            //$('h1').fadeOut(2000);
+          //  $('h1').slideUp(2000);
+           // $('h1').slideDown(1000);
+        })
+    </script>
+</body>
+</html>
