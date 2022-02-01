@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+    <input type="text" id="txtMovie">
+    <input type="button" value="Search" id="btnShow">
+    <h1>NO Data</h1>
+    <img src="" alt="No img">
+    <div class="row">
+      
+    </div>
+    
+  
+  <script>
+        $(function(){
+            $('#btnShow').click(function(){
+                   let mName = $('#txtMovie').val();
+                   $.ajax({
+               type: "GET",
+               url: `https://www.omdbapi.com/?s=${mName}&apikey=6ff571af`,
+               data: "data",
+               dataType: "JSON",
+               success: function (response) {
+                   for(let i=0; i<response.Search.length;i++){
+                 $('.row').append(`<div class="col-md-4">
+            <div class="card">
+                <img class="card-img-top" src=${response.Search[i].Poster} alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">${response.Search[i].Title}</h5>
+                  <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <input type="button" value="More" class="btn btn-success btn-sm">
+                  </div>
+              </div>
+        </div>`);
+                 
+                    console.log(response.Search[i].Title)
+                }
+
+                //    $('h1').text(response.Title)
+                //    $('img').attr('src',response.Poster);
+                //    $('h3').text(response.Director);
+               }
+           });
+                });
+        });
+    </script>
+</body>
+</html>
